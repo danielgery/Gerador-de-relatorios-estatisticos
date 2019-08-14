@@ -1,3 +1,3 @@
+hoje;1
 programacao;3
 software;2
-hoje;1
