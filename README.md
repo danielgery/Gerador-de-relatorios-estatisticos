@@ -1,6 +1,7 @@
 # Gerador-de-relatorios-estatisticos
 Construção de Software
-
+# Wiki
+ https://github.com/danielgery/Gerador-de-relatorios-estatisticos/wiki
 # Funçoes
 
 Dicionário<String, int> Leitura (arquivo.txt);
