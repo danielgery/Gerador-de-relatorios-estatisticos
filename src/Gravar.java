@@ -13,7 +13,9 @@ public class Gravar {
 			}
 					
 		}
+		nome=nome.substring(0, nome.length()-4);
 		try (PrintStream out = new PrintStream(
+				
 				new FileOutputStream(nome+"-res.txt"))) {
 			out.print(arquivo);	
 	}
