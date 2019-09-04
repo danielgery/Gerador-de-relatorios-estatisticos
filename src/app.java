@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class app {
 
-	public static void main(String[] args){
-		
+	public static void main(String[] args) {
+
 		boolean validacao = false;
 		String nomearquivo;
 		if (args.length == 0) {
@@ -19,29 +19,29 @@ public class app {
 		} else {
 			nomearquivo = args[0];
 		}
-		if(!nomearquivo.endsWith(".txt")) {
-			System.out.print("ERRO: arquivo com formato inválido.");
+		if (!nomearquivo.endsWith(".txt")) {
+			System.out.print("ERRO: arquivo com formato invÃ¡lido.");
 			System.exit(0);
 		}
-		if(nomearquivo == null || nomearquivo.equals("")) {
-			System.out.print("1ERRO: opção de relatório inválida.");
-			System.exit(0);
-		}{
-		try {
-			Leitura.lerTexto(nomearquivo);
-		} catch (FileNotFoundException e) {
-			System.out.print("ERRO: arquivo inexistente.");;
+		if (nomearquivo == null || nomearquivo.equals("")) {
+			System.out.print("1ERRO: opÃ§Ã£o de relatÃ³rio invÃ¡lida.");
 			System.exit(0);
 		}
+		{
+			try {
+				Leitura.lerTexto(nomearquivo);
+			} catch (FileNotFoundException e) {
+				System.out.print("ERRO: arquivo inexistente.");
+				;
+				System.exit(0);
+			}
 		}
-
-		
 
 		Tarefas tarefa = new Tarefas();
 
-		System.out.print("Opções de relatório:\r\n" + "(1) Ordem alfabética crescente das palavras\r\n"
-				+ "(2) Ordem alfabética decrescente das palavras\r\n" + "(3) Quantidade crescente de ocorrências\r\n"
-				+ "(4) Quantidade decrescente de ocorrências\r\n" + "Indique a opção desejada:");
+		System.out.print("OpÃ§Ãµes de relatÃ³rio:\r\n" + "(1) Ordem alfabÃ©tica crescente das palavras\r\n"
+				+ "(2) Ordem alfabÃ©tica decrescente das palavras\r\n" + "(3) Quantidade crescente de ocorrÃªncias\r\n"
+				+ "(4) Quantidade decrescente de ocorrÃªncias\r\n" + "Indique a opÃ§Ã£o desejada:");
 
 		String numero = "";
 		Scanner sc2 = new Scanner(System.in);
@@ -59,22 +59,20 @@ public class app {
 		if (numero.equals("4")) {
 			tarefa.qdo();
 		}
-		
-		if (!(numero.equals("1")||numero.equals("2")||numero.equals("3")||numero.equals("4"))) {
-			System.out.println("ERRO: Opção inválida.");
+
+		if (!(numero.equals("1") || numero.equals("2") || numero.equals("3") || numero.equals("4"))) {
+			System.out.println("ERRO: OpÃ§Ã£o invÃ¡lida.");
 			System.exit(0);
 		}
 
-		
 		try {
 			Gravar.salvar(nomearquivo);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			System.out.println("ERRO: geração do arquivo de saída.");
+			System.out.println("ERRO: geraÃ§Ã£o do arquivo de saÃ­da.");
 			System.exit(0);
 		}
-		nomearquivo=nomearquivo.substring(0, nomearquivo.length()-4);
-		System.out.println("Relatório gerado. Arquivo " + nomearquivo + "-res.txt gerado.");
+		nomearquivo = nomearquivo.substring(0, nomearquivo.length() - 4);
+		System.out.println("RelatÃ³rio gerado. Arquivo " + nomearquivo + "-res.txt gerado.");
 
 	}
 

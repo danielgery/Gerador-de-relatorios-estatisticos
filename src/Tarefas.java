@@ -5,9 +5,9 @@ import java.util.Collections;
 public class Tarefas {
 	ArrayList<Palavra> saida = new ArrayList<Palavra>();
 	/*
-	 * (1) Ordem alfabética crescente das palavras (2) Ordem alfabética decrescente
-	 * das palavras (3) Quantidade crescente de ocorrências (4) Quantidade
-	 * decrescente de ocorrências
+	 * (1) Ordem alfabï¿½tica crescente das palavras (2) Ordem alfabï¿½tica decrescente
+	 * das palavras (3) Quantidade crescente de ocorrï¿½ncias (4) Quantidade
+	 * decrescente de ocorrï¿½ncias
 	 * 
 	 */
 
@@ -32,33 +32,33 @@ public class Tarefas {
 	}
 
 	public void oad() {
-oac();
-Collections.reverse(GerenciadorPalavra.resultado);
+		oac();
+		Collections.reverse(GerenciadorPalavra.resultado);
 
 	}
 
 	public void qco() {
-int maior =0;
-for (int i=0;i<GerenciadorPalavra.palavras.size();i++) {
-	if (GerenciadorPalavra.palavras.get(i).getOcorrencias()>maior) {
-		maior = GerenciadorPalavra.palavras.get(i).getOcorrencias();
-	}
-	
-}
-for (int i=0;i<maior+1;i++) {
-for (int j=0;j<GerenciadorPalavra.palavras.size();j++) {
-	if (GerenciadorPalavra.palavras.get(j).getOcorrencias()==i) {
-		Palavra palavra = new Palavra(GerenciadorPalavra.palavras.get(j).getNome(),i);
-		GerenciadorPalavra.resultado.add(palavra);
-	}
-}
-}
+		int maior = 0;
+		for (int i = 0; i < GerenciadorPalavra.palavras.size(); i++) {
+			if (GerenciadorPalavra.palavras.get(i).getOcorrencias() > maior) {
+				maior = GerenciadorPalavra.palavras.get(i).getOcorrencias();
+			}
+
+		}
+		for (int i = 0; i < maior + 1; i++) {
+			for (int j = 0; j < GerenciadorPalavra.palavras.size(); j++) {
+				if (GerenciadorPalavra.palavras.get(j).getOcorrencias() == i) {
+					Palavra palavra = new Palavra(GerenciadorPalavra.palavras.get(j).getNome(), i);
+					GerenciadorPalavra.resultado.add(palavra);
+				}
+			}
+		}
 
 	}
 
 	public void qdo() {
-qco();
-Collections.reverse(GerenciadorPalavra.resultado);
+		qco();
+		Collections.reverse(GerenciadorPalavra.resultado);
 	}
 
 }
